@@ -1,0 +1,4 @@
+.card_nosotros{width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; 
+background: url(../../Assets/img/sobrenosotros1.jpg);}
+
+.text_nosotros{width: 100%; height: 170px; background-color: #EAEAEA; padding: 20px;}

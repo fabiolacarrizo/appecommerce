@@ -1,0 +1,15 @@
+
+nav{ background-color: #73777B; height: 180px; width: 100%; display: flex; box-shadow: 0px 1px 8px 3px #000000; font-size: 20px;} 
+ 
+.card_boton{ display: flex; flex-direction: row; align-items: center; justify-content:center; margin-left: 45%;} 
+
+
+.card_logo{display: flex; align-items: flex-start; justify-content: flex-start; }
+
+.boton_nav{margin: 10px; background-color: #73777B; color: white; text-decoration: none;}
+
+.boton_nav:hover{border-radius: 5px; background-color: #7F8487; color: white; }
+
+.logo{margin: 20px; margin-top: 40px; margin-left: 30px;}
+.logo:hover{width: 140px; height: 110px;}
+

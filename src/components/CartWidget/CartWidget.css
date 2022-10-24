@@ -1,0 +1,3 @@
+.cartWidget{ display: flex; flex-direction: row; width:60px ; height: 50px; margin-top: 60px; text-decoration: none;} 
+
+.contador{background-color: white; border-radius: 20px; margin-left: 10px; width: 30px; height: 30px;}

@@ -1,0 +1,12 @@
+.card-detalleItem{display: flex; align-items: center; justify-content: center; } 
+
+.card-detalleItem img{margin-right: 150px;}
+
+.botonvolver{background-color: #5F6F94; margin: 10px; color: #97D2EC; box-shadow: 5px 2px 4px 2px #5F6F94; text-decoration: none;
+    width: 80px; height: 30px;}
+    
+    .botonvolver:hover{color: white;}
+    
+.card-detalleImgVolver{display: flex; flex-direction: column; }
+
+button{border: none;}

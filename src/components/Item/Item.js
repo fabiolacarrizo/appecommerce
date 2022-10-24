@@ -1,0 +1,17 @@
+
+import { Link } from 'react-router-dom'
+
+const Item = ({id, name, codigo, price , img, categoria, stock}) =>{
+
+    return(
+        <div className='card_productos'>
+            <img style={{width:300, height:400,}}  src={img} alt={name}></img>
+            <h2>{name}</h2>
+            <h5>Codigo: {codigo}</h5>
+            <p>${price}</p>     
+            <Link to={`/detail/${id}`}>Ver detalle</Link>
+        </div>
+    )
+}
+
+export default Item
