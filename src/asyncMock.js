@@ -1,5 +1,5 @@
 
-const products = [
+export const products = [
     {id: '1', name:'Reloj',codigo:'DQ1907', price:1000, categoria:'Mujer', subcategoria:'Analogico', description:'Reloj de pulsera', stock:'20', img:'/images/dq1907.jpg'},
 
     {id: '2', name:'Reloj',codigo:'DQ1879', price:1000, categoria:'Hombre', subcategoria:'Analogico', description:'Maquina con calendario', stock:'20', img:'/images/dq1879.jpg' },

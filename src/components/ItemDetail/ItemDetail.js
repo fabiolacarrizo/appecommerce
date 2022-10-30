@@ -1,13 +1,17 @@
 import Counter from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 import { Link, useNavigate } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 import { useState } from "react";
 
-const ItemDetail = ({id, name, codigo, categoria, price, stock, img, description}) =>{
+const ItemDetail = ({id, name, code, category, price, stock, img, description}) =>{
   const [goCart, setGoCart] = useState(false);
+  const { addProduct } = useCartContext();
 
-    const handleOnAdd = (quantity) => {
+
+    const OnAdd = (quantity) => {
       setGoCart(true);
+      addProduct(quantity);
      }
    
   const navigate = useNavigate()
@@ -21,14 +25,14 @@ const ItemDetail = ({id, name, codigo, categoria, price, stock, img, description
 
      <div>
       <h3>{name}</h3>
-      <h5>Codigo:{codigo}</h5>
-      <h5>Categoria:{categoria} </h5>
+      <h5>Codigo:{code}</h5>
+      <h5>Categoria:{category} </h5>
       <h5>Descripcion: {description}</h5>
       <p>${price}</p>
       {
         goCart
         ? <p className="botonContador"> <Link className="botonContador" to={'/cart'} >Finalizar Compra</Link></p> 
-         :  <Counter onAdd={handleOnAdd}/>
+         :  <Counter onAdd={OnAdd}/>
       }
       </div>
   </div>

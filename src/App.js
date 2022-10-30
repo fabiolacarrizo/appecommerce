@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart';
 import CartProvider from './context/CartContext';
 import Sucursales from './components/Sucursales/sucursales';
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -24,12 +25,13 @@ console.log('click al agregar al carrito');
     <Routes>
       <Route path='/' element={<ItemListContainer/>}/>  
       <Route path= '/detail/:productId' element={<ItemDetailContainer/>}/> 
-      <Route path='/categoria/:categoriaId' element={<ItemListContainer/>}>  </Route>
+      <Route path='/category/:categoryId' element={<ItemListContainer/>}>  </Route>
       <Route path='/subcategoria/:subCategoriaId' element={<ItemListContainer/>} ></Route>
       <Route path='*' element={<h1>404 NOT FOUND</h1>} />
       <Route path='/cart' element={<Cart/>} > </Route>
       <Route path='/sucursales' element={<Sucursales/>}></Route>
       <Route path='/sobrenosotros' element={<SobreNosotros/>}></Route>
+      <Route path='/checkout' element={<Checkout/>}></Route>
    </Routes>
    <Footer/>
    </CartProvider>

@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 
-const CartContext = React.createContext([]);
+export const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
 const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
+
+	console.log('carrito', cart);
 
 	// const addProduct = (item, newQuantity) => {
 	//     const newCart = cart.filter(prod => prod.id !== item.id);
@@ -32,17 +34,17 @@ const CartProvider = ({ children }) => {
 	//     setCart(newCart);
 	// }
 
-	const addProduct = (item, quantity) => {
-		if (isInCart(item.id)) {
+	const addProduct = (products, quantity) => {
+		if (isInCart(products.id)) {
 			setCart(
-				cart.map((product) => {
-					return product.id === item.id
+				cart.map((product) => {  
+					return product.id === products.id
 						? { ...product, quantity: product.quantity + quantity }
 						: product;
 				}),
 			);
 		} else {
-			setCart([...cart, { ...item, quantity }]);
+			setCart([...cart, { ...products, quantity }]);
 		}
 	};
 
@@ -73,7 +75,7 @@ const CartProvider = ({ children }) => {
 				addProduct,
 				totalPrice,
 				totalProducts,
-				cart,
+				cart
 			}}
 		>
 			{children}
