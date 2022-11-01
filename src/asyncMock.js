@@ -1,4 +1,4 @@
-
+/*
 export const products = [
     {id: '1', name:'Reloj',codigo:'DQ1907', price:1000, categoria:'Mujer', subcategoria:'Analogico', description:'Reloj de pulsera', stock:'20', img:'/images/dq1907.jpg'},
 
@@ -49,4 +49,5 @@ export const getProductsByIdSubCategory= (subCategoriaId)=>{
           resolve(products.filter(prod => prod.subcategoria === subCategoriaId))
         }, 1000)
       })
-}
+}  
+*/
