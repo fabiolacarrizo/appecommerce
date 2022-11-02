@@ -1,0 +1,5 @@
+.cart_detail{display: flex; flex-direction: row; margin: 30px;}
+
+.cart_detailDatos{display: flex; flex-direction: column;}
+
+.cart_detail p{margin: 15px;}

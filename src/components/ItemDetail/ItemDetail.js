@@ -18,15 +18,15 @@ const OnAdd = (quantity) => {
             name,
             price,
             img,
+            code,
+            category,
+            description
         }
 
         addItem(productToAdd, quantity)
  
     }
 
-
-
-  
 
   const navigate = useNavigate()
 

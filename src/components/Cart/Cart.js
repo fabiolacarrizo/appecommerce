@@ -7,28 +7,6 @@ import ItemCart from "../ItemCart/ItemCart.js";
 const Cart = () => {
 	const { cart, totalPrice } = useCartContext();
 
-	const order = {
-		buyer: {
-			name: "Pablo",
-			email: "Pablo@gmail.com",
-			phone: "123123",
-			address: "asdd",
-		},
-		items: cart.map((product) => ({
-			id: product.id,
-			title: product.title,
-			price: product.price,
-			quantity: product.quantity,
-		})),
-		total: totalPrice(),
-	};
-
-	const handleClick = () => {
-		const db = getFirestore();
-		const ordersCollection = collection(db, "orders");
-		addDoc(ordersCollection, order).then(({ id }) => console.log(id));
-	};
-
 	if (cart.length === 0) {
 		return (
 			<>
@@ -40,13 +18,15 @@ const Cart = () => {
 
 	return (
 		<div>
-			
+			<div className="card_todoslosproductos">
 			{
             cart.map((product) => <ItemCart key={product.id} {...product} />)
             }
-
+           </div>
 			<p>total: {totalPrice()}</p>
-			<button onClick={handleClick}>Emitir compra</button>
+	
+			<Link to='/checkout'>checkout</Link>
+			
 		</div>
 	);
 };
