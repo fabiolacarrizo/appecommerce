@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../ItemCart/ItemCart.js";
+import FormCheckout from "../FormCheckout/FormCheckout";
+
 
  const Checkout= () =>{
     const { cart, totalPrice } = useCartContext();
@@ -34,11 +36,9 @@ import ItemCart from "../ItemCart/ItemCart.js";
 
     return(
         <div>
-            <h1>Checkout</h1>
-           <h3>Formulario</h3>
-         
+            <h1>Finalizar Compra</h1>
         
-
+        <FormCheckout/>
 
             <button onClick={handleClick}>Emitir compra</button>
         </div>

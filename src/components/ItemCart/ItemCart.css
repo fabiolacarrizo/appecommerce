@@ -1,5 +1,6 @@
-.cart_detail{display: flex; flex-direction: row; margin: 30px;}
+.cart_detail{display: flex; flex-direction: row; margin: 30px; background-color: #B2B2B2;border-radius: 15px;}
 
-.cart_detailDatos{display: flex; flex-direction: column;}
+.cart_detailDatos{display: flex; flex-direction: row; height: 80px; }
 
 .cart_detail p{margin: 15px;}
+

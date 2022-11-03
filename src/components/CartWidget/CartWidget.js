@@ -13,8 +13,8 @@ const CartWidget = () =>{
     <div className='cartWidget'>
   <img  src={iconocarrito} alt=""></img>
   <div >
-     <p className='contador'>0</p>
-     <span>{totalProducts() || ""}</span>
+     <p className='contador' > <span>{totalProducts() || ""}</span></p>
+
   </div>
  </div> 
  </Link>
