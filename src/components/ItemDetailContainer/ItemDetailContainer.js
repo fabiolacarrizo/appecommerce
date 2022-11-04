@@ -1,7 +1,6 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './ItemDetailContainer.css'
 import {useState, useEffect} from "react"
-import { getProductsById } from "../../asyncMock"
 import { useParams } from 'react-router-dom'
 import { getDoc, doc } from "firebase/firestore"
 import { db } from "../../service/firebase"

@@ -35,29 +35,21 @@ const submit = (e) => {
     e.preventDefault ();
     if (!name || !email )
         {
-            return({
-                title: "Completa tus datos",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-        
-            })
+            return(
+              <div>
+                <p>Completa tus datos porfavor</p>
+             </div>
+            )
         }
         else if (email != checkEmail && email && checkEmail) {
-          return({
-            title: "Los emails no coinciden",
-            html: "Por favor, intente nuevamente",
-        })
+          return(
+            <div>
+              <p>Los Email no Coinciden</p>
+            </div>
+          )
     }
 
-    else {
-      return({
-            title: "Datos Guardados",
-            icon: "success",
-            buttons: true,
-        })
-
-    completoDatos(
+    else { completoDatos(
         name,
         tlf,
         email,
@@ -69,6 +61,13 @@ const submit = (e) => {
         province,
         comment,
     )
+      return(
+        <div>
+          <h3>Datos Guardados</h3>
+        </div>
+      )
+
+   
     }
     }
 
@@ -114,7 +113,7 @@ const submit = (e) => {
  </div>
 
 </div>
-<button onClick = {submit}> Submit Data</button>
+<button onClick = {submit}>Confirmar Datos</button>
 
 </form>  
         </div>

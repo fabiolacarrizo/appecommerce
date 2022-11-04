@@ -8,7 +8,8 @@ import FormCheckout from "../FormCheckout/FormCheckout";
 
  const Checkout= () =>{
     const { cart, totalPrice } = useCartContext();
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(true)
+
 	
 	const [personalData, setPersonalData] = useState(false)
     
@@ -18,9 +19,6 @@ const completoDatos = (name, tlf, email, checkEmail, direction, directionNumber,
 	setDatosCompra({name, tlf, email, checkEmail, direction, directionNumber, cp,location, province, comment})
 	setPersonalData(true)
 }
-
-
-
 
 	const order =  {
 		buyer: datosCompra,
@@ -41,14 +39,18 @@ const completoDatos = (name, tlf, email, checkEmail, direction, directionNumber,
 		addDoc(ordersCollection, order).then(({ id }) => console.log(id));
 	};
 
+	if(loading){
+		<h4>Cargando...</h4>
+	}
 
     return(
         <div>
             <h1>Finalizar Compra</h1>
         
         <FormCheckout completoDatos={completoDatos}/>
-
-            <button onClick={handleClick}>Emitir compra</button>
+		{ personalData 
+		? <button onClick={handleClick}>Emitir compra</button> 
+     :""}
         </div>
     )
  }
