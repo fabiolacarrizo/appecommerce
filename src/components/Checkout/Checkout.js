@@ -1,5 +1,5 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../ItemCart/ItemCart.js";
@@ -8,14 +8,22 @@ import FormCheckout from "../FormCheckout/FormCheckout";
 
  const Checkout= () =>{
     const { cart, totalPrice } = useCartContext();
+	const [loading, setLoading] = useState(false)
+	
+	const [personalData, setPersonalData] = useState(false)
+    
+	const [datosCompra, setDatosCompra] = useState({}) 
 
-	const order = {
-		buyer: {
-			name: "Fabiola",
-			email: "Carrizofabi@gmail.com",
-			phone: "123123",
-			address: "aveliana",
-		},
+const completoDatos = (name, tlf, email, checkEmail, direction, directionNumber, cp,location, province, comment) =>{
+	setDatosCompra({name, tlf, email, checkEmail, direction, directionNumber, cp,location, province, comment})
+	setPersonalData(true)
+}
+
+
+
+
+	const order =  {
+		buyer: datosCompra,
 		items: cart.map((data) => ({
 			id: data.id,
 			title: data.name,
@@ -38,12 +46,12 @@ import FormCheckout from "../FormCheckout/FormCheckout";
         <div>
             <h1>Finalizar Compra</h1>
         
-        <FormCheckout/>
+        <FormCheckout completoDatos={completoDatos}/>
 
             <button onClick={handleClick}>Emitir compra</button>
         </div>
     )
  }
-
+ 
 
  export default Checkout

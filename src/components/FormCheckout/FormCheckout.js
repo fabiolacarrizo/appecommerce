@@ -1,11 +1,76 @@
-import { useEffect } from 'react'
+import { useEffect, useState, createContext } from 'react'
 import './FormCheckout.css'
 
 
-const FormCheckout = ()=>{
+
+export const FormData = createContext({
+  name:"",
+  tlf:"",
+  email:"",
+  checkEmail:"",
+  direction:"",
+  directionNumber:"",
+  cp:"",
+  location:"",
+  province:"",
+  comment:"",
+})
 
 
+const FormCheckout = ({completoDatos})=>{
 
+  const [name, setName] = useState("");
+    const [tlf, setTlf] = useState("");
+    const [email, setEmail] = useState("");
+    const [checkEmail, setCheckEmail] = useState("");
+    const [direction, setDirection] = useState("");
+    const [directionNumber, setDirectionNumber] = useState("");
+    const [cp, setCp] = useState("");
+    const [location, setLocation] = useState("");
+    const [province, setProvince] = useState("");
+    const [comment, setComment] = useState ("");
+
+
+const submit = (e) => {
+    e.preventDefault ();
+    if (!name || !email )
+        {
+            return({
+                title: "Completa tus datos",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+        
+            })
+        }
+        else if (email != checkEmail && email && checkEmail) {
+          return({
+            title: "Los emails no coinciden",
+            html: "Por favor, intente nuevamente",
+        })
+    }
+
+    else {
+      return({
+            title: "Datos Guardados",
+            icon: "success",
+            buttons: true,
+        })
+
+    completoDatos(
+        name,
+        tlf,
+        email,
+        checkEmail,
+        direction,
+        directionNumber,
+        cp,
+        location,
+        province,
+        comment,
+    )
+    }
+    }
 
 
 
@@ -16,16 +81,16 @@ const FormCheckout = ()=>{
 <form>
 <div className='formCheckout'>
 <p>  <label>Nombre y Apellido</label>
- <input  type='text' placeholder='Nombre'  required></input>
+ <input value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder='Nombre'  required></input>
 
  <label>Telefono</label> 
-<input  type='number' placeholder='TLF'  required></input></p> 
+<input value={tlf} onChange={(e) => setTlf(e.target.value)} type='number' placeholder='TLF'  required></input></p> 
 
 <p>  <label>Correo</label> 
-<input  type='email' placeholder='Correo'  required></input>
+<input value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Correo'  required></input>
 
   <label> Confirmar Correo</label> 
-<input  type='email' placeholder='Correo'  required></input></p>
+<input value={checkEmail} onChange={(e) => setCheckEmail(e.target.value)} type='email' placeholder='Correo'  required></input></p>
 
 
 <h3>Datos para Envio</h3>
@@ -33,23 +98,23 @@ const FormCheckout = ()=>{
 <div className='datosEnvio'>
 
 <p>  <label>Domicilio</label>
- <input  type='text' placeholder='Domicilio'  required></input> 
- <label>Nro</label> <input  type='Number' placeholder='Altura'  required></input>
+ <input value={direction} onChange={(e) => setDirection(e.target.value)} type='text' placeholder='Domicilio'  required></input> 
+ <label>Nro</label> <input value={directionNumber} onChange={(e) => setDirectionNumber(e.target.value)} type='Number' placeholder='Altura'  required></input>
 
  <label>CP</label>
- <input  type='number' placeholder='CP'  required></input></p>
+ <input value={cp} onChange={(e) => setCp(e.target.value)} type='number' placeholder='CP' required></input></p>
 
  <p>  <label>Localidad</label>
- <input  type='text' placeholder='Localidad'  required></input>
+ <input value={location} onChange={(e) => setLocation(e.target.value)} type='text' placeholder='Localidad'  required></input>
 
   <label>Provincia</label>
- <input  type='text' placeholder='Provincia'  required></input></p>
+ <input value={province} onChange={(e) => setProvince(e.target.value)} type='text' placeholder='Provincia'  required></input></p>
 
-<p> <textarea style={{width:450}} name="comentarios" placeholder="Indiquenos aca si el pedido sera retirado en una de nuestras sucursales, enviado con un trasporte o por correo argentino, tenga en cuenta que el costo del envio por correo argentino es sumado al importe total. ¡Gracias!" id="" rows="4" required></textarea></p>
+<p> <textarea value={comment} onChange={(e) => setComment(e.target.value)} style={{width:450}} name="comentarios" placeholder="Indiquenos aca si el pedido sera retirado en una de nuestras sucursales, enviado con un trasporte o por correo argentino, tenga en cuenta que el costo del envio por correo argentino es sumado al importe total. ¡Gracias!" id="" rows="4" required></textarea></p>
  </div>
 
 </div>
-<button >Confirmar Datos</button>
+<button onClick = {submit}> Submit Data</button>
 
 </form>  
         </div>

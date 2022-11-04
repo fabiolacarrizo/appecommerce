@@ -1,8 +1,13 @@
+
+
 .formCheckout{display: flex; flex-direction: column; justify-content:flex-start; justify-items: left; align-items: left; }
 
-.datosEnvio{display: block; justify-content: center; align-items: center; align-self: center; background-color: blanchedalmond; width: 800px; padding: 20px;}
+.formCheckout p{margin-left: 0%;}
 
+.datosEnvio{display: block; justify-content: center; align-items: center; align-self: center;  width: 800px; padding: 20px;}
+
+label{margin-right: 10px;}
 
 .cardForm{display: flex; flex-direction: row; }
 
-label{margin: 5px;}
+label{margin: 5px; margin-left: 0%;}
