@@ -1,5 +1,6 @@
 import { useEffect, useState, createContext } from 'react'
 import './FormCheckout.css'
+import Swal from "sweetalert2";
 
 
 
@@ -33,19 +34,15 @@ const FormCheckout = ({completoDatos})=>{
 
 const submit = (e) => {
     e.preventDefault ();
-    if (!name || !email )
+    if (!name || !tlf || !email || !checkEmail || !direction || !direction || !directionNumber || !cp || !location || !province || !comment )
         {
             return(
-              <div>
-                <p>Completa tus datos porfavor</p>
-             </div>
+                Swal.fire('Completa tus datos porfavor') 
             )
         }
         else if (email != checkEmail && email && checkEmail) {
           return(
-            <div>
-              <p>Los Email no Coinciden</p>
-            </div>
+            Swal.fire('Los email no coinciden')
           )
     }
 
@@ -62,15 +59,18 @@ const submit = (e) => {
         comment,
     )
       return(
-        <div>
-          <h3>Datos Guardados</h3>
-        </div>
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Tus datos Fueron cargados',
+          showConfirmButton: false,
+          timer: 1500
+        })
       )
 
    
     }
     }
-
 
 
     return(
@@ -113,7 +113,7 @@ const submit = (e) => {
  </div>
 
 </div>
-<button onClick = {submit}>Confirmar Datos</button>
+<button onClick = {submit}> Confirmar Datos</button>
 
 </form>  
         </div>

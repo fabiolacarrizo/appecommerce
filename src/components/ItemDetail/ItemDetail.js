@@ -20,7 +20,8 @@ const OnAdd = (quantity) => {
             img,
             code,
             category,
-            description
+            description,
+            stock,
         }
 
         addItem(productToAdd, quantity)
@@ -45,7 +46,8 @@ const OnAdd = (quantity) => {
       <p>${price}</p>
       {
         goCart
-        ? ( <p className="botonContador"> <Link className="botonContador" to={'/cart'} >Finalizar Compra</Link></p> )
+        ? ( <p> <Link className="botonContador" to={'/'} >Seguir Comprando</Link>
+        <Link className="botonContador" to={'/cart'} >Finalizar Compra</Link> </p> )
          : (<Counter onAdd={OnAdd}/>) 
       }
       </div>
