@@ -1,10 +1,9 @@
 import { useState} from 'react'
 import './ItemCount.css'
 
-const Counter = ({ onAdd}) =>{
+const Counter = ({ onAdd, stock}) =>{
     const [quantity, setQuantity]= useState(1)
 
-const stock= 20
 
 const incrementar= () =>{ 
   if( quantity < stock)  {setQuantity(quantity+1)} 

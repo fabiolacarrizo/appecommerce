@@ -1,6 +1,5 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore, Timestamp } from "firebase/firestore";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import FormCheckout from "../FormCheckout/FormCheckout";
 import Swal from "sweetalert2";
@@ -32,6 +31,7 @@ const completoDatos = (name, tlf, email, checkEmail, direction, directionNumber,
 			category: data.category,
 		})),
 		total: totalPrice(),
+		date: Timestamp.fromDate(new Date())
 	} 
 
 	const handleClick = async () => {

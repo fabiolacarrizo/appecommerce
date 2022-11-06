@@ -11,6 +11,7 @@ import relojoferta  from '../../Assets/img/relojoferta.jpg'
 import logo2 from '../../Assets/img/logo2.png'
 import { getDocs, collection, query, where, orderBy} from 'firebase/firestore'
 import { db } from '../../service/firebase'
+import CategoriesButton from '../CategoriesButton/CategoriesButton'
 
 const ItemListContainer= ({ greeting })=>{
   const [products, setProducts] = useState([])
@@ -53,17 +54,12 @@ return(
   return (
     <div style={{marginTop:20, }}>
    
-    <Link style={{textDecoration:'none'}} to={'/category/Mujer'} ><div className='boton_categoriaMujer'><p>Mujer </p> </div> </Link>
+ <CategoriesButton></CategoriesButton>
  
-    <Link className='boton_categoria' to={'/category/Hombre'}>hombre <img src={relojeshombre}></img> </Link>
-
-    <Link className='boton_categoria' to={'/category/infantil'}> niños<img src={relojinfantil}></img></Link>
-
-    <Link className='boton_categoria' to={'/category/Oferta'} > oferta<img src={relojoferta}></img></Link>
-
     <div> 
       <Link  to={'/subcategoria/Analogico'}>Analogicos</Link>
       <Link to={'/subcategoria/Digital'}>Digitales</Link>
+        <Link to={'/category/Oferta'} > ofertas</Link>
     </div>
     
     <ItemList products={products}/>

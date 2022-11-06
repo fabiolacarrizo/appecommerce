@@ -1,3 +1,34 @@
+# Instalacion
+
+Para inicializar este proyecto siga con los siguientes pasos en consola:
+
+1. git clone https://github.com/fabiolacarrizo/appecommerce.git
+2. cd appddtae
+3. npm install
+4. npm start
+
+Listo para editar!
+
+# Librerias
+
+-Bootstrap: libreria instalada con $ npm install bootstrap
+Uso: Diseño.
+
+-React Rooter Dom: Libreria Instalada con $ npm install react-router-dom@6
+Uso: Agilidad en la navegabilidad de la pagina, es necesaria ya que el proyecto esta credada con la libreria React de javascript.
+
+-SweetAlert: Libreria instalada con  $ npm install sweetalert2
+Uso: Esta libreria permite usar notificaciones con diseños ya establecidos, se considero necesaria para el proyecto para agregar mejor diseño.
+
+# Base de datos
+
+La pagina web esta enlazada con firebase donde se estan guardados las ordenes de compra y los productos
+
+# Link Vercel
+
+https://appecommerce-five.vercel.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
