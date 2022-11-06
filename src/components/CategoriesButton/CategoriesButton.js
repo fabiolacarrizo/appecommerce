@@ -2,6 +2,7 @@ import './CategoriesButton.css'
 import relojdama from '../../Assets/img/relojdama.jpg'
 import relojeshombre from '../../Assets/img/relojeshombre.jpg'
 import relojinfantil from '../../Assets/img/relojinfantil.jpg'
+
 import { Link } from 'react-router-dom'
 
 const CategoriesButton= ()=>{

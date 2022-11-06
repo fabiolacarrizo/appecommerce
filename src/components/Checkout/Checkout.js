@@ -1,10 +1,11 @@
 import { addDoc, collection, getFirestore, Timestamp } from "firebase/firestore";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import FormCheckout from "../FormCheckout/FormCheckout";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-
+import './Checkout.css'
 
  const Checkout= () =>{
     const { cart, totalPrice, clearCart } = useCartContext();
@@ -31,7 +32,7 @@ const completoDatos = (name, tlf, email, checkEmail, direction, directionNumber,
 			category: data.category,
 		})),
 		total: totalPrice(),
-		date: Timestamp.fromDate(new Date())
+        date: Timestamp.fromDate(new Date())
 	} 
 
 	const handleClick = async () => {
@@ -63,7 +64,7 @@ Swal.fire({
 	}
 
     return(
-        <div>
+        <div className="checkout-container">
             <h1>Finalizar Compra</h1>
         
 

@@ -3,7 +3,7 @@ import location from '../../Assets/img/location.svg'
 
 const Sucursales =()=>{
     return(
-        <div>
+        <div className='sucursales-container'>
 <h1>Sucursales de la marca</h1>
 
 <div>
@@ -31,8 +31,9 @@ const Sucursales =()=>{
     <p>+54 9 11 5969-4864</p> 
 </button>
 </div>
+<div>
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1DnI__Cp-mnohamflpBYMldae0zW-qsI&ehbc=2E312F" width="1200" height="600"></iframe>
-
+</div>
  </div>
     )
 }

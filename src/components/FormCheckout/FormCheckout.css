@@ -1,5 +1,5 @@
 
-
+.form-container{ height: 100%; margin-bottom: 200px;}
 .formCheckout{display: flex; flex-direction: column; justify-content:flex-start; justify-items: left; align-items: left; }
 
 .formCheckout p{margin-left: 0%;}

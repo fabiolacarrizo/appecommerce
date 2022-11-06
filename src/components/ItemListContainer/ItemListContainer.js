@@ -12,6 +12,7 @@ import logo2 from '../../Assets/img/logo2.png'
 import { getDocs, collection, query, where, orderBy} from 'firebase/firestore'
 import { db } from '../../service/firebase'
 import CategoriesButton from '../CategoriesButton/CategoriesButton'
+import Carousel from '../Carousel/Carousel'
 
 const ItemListContainer= ({ greeting })=>{
   const [products, setProducts] = useState([])
@@ -52,9 +53,9 @@ return(
 
 
   return (
-    <div style={{marginTop:20, }}>
-   
- <CategoriesButton></CategoriesButton>
+    <div className='ItemList-Container' style={{marginTop:20, }}>
+<Carousel/>
+<CategoriesButton/>
  
     <div> 
       <Link  to={'/subcategoria/Analogico'}>Analogicos</Link>

@@ -5,7 +5,7 @@ footer{
    bottom: 0;
    width: 100%;
 }
-.card_footer{ background-color: black; padding-top: 20px; display: flex; flex-direction: row; justify-content: center;  font-size: 16px;   background-color: black; height: 180px;width: 100%; margin: 0%; position: relative; bottom: 0; margin-top: 100px;}
+.card_footer{ background-color: black; padding-top: 20px; display: flex; flex-direction: row; justify-content: center;  font-size: 16px;   background-color: black; height: 180px;width: 100%; margin: 0%; position: relative; bottom: 0; }
 
 .card_footerItem{background-color: black; padding-top: 20px; display: flex; flex-direction: row; justify-content: center;  font-size: 16px;   background-color: black; height: 180px;width: 100%; margin: 0%;}
 

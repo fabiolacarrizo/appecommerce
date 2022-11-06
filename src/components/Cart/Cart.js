@@ -3,29 +3,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../ItemCart/ItemCart.js";
+import './Cart.css'
+import cartcomprarmas from '../../Assets/img/cartcomprarmas.png'
 
 const Cart = () => {
 	const { cart, totalPrice } = useCartContext();
 
 	if (cart.length === 0) {
 		return (
-			<>
-				<p>No hay elementos en el carrito</p>
-				<Link to="/">Hacer compras</Link>
-			</>
+		 <div className="cart-Container">
+				<h4>No hay elementos en el carrito</h4>
+				<Link className="botonSeguirComprando" to="/"> <img src={cartcomprarmas}></img>Hacer compras</Link>
+		</div>
 		);
 	}
 
 	return (
-		<div>
+		<div className="cart-Container">
 			<div className="card_todoslosproductos">
 			{
             cart.map((product) => <ItemCart key={product.id} {...product} />)
             }
            </div>
-			<p>total: {totalPrice()}</p>
-	
-			<Link to='/checkout'>checkout</Link>
+			<p className="totalCard">Total: ${totalPrice()}</p>
+	     
+	<p  className="cartButtons">	<Link className="botonContador" to='/'>Seguir Comprando</Link> 
+	 <Link className="botonContador" to='/checkout'>checkout</Link> </p>	 
 			
 		</div>
 	);

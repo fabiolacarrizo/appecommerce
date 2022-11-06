@@ -74,7 +74,7 @@ const submit = (e) => {
 
 
     return(
-        <div>
+        <div className='form-container'>
   <h2  >Formulario De Compras</h2>
 
 <form>

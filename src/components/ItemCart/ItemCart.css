@@ -1,6 +1,8 @@
-.cart_detail{display: flex; flex-direction: row; margin: 30px; background-color: #B2B2B2;border-radius: 15px;}
+.cart_detail{display: flex; flex-direction: row; margin: 30px; background-color: #D8D9CF;border-radius: 15px;}
 
 .cart_detailDatos{display: flex; flex-direction: row; height: 80px; }
 
-.cart_detail p{margin: 15px;}
+.cart_detailDatos img{width: 30px; height: 30px;}
+
+.cart_detail p{margin: 15px; }
 
